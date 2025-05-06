@@ -11,47 +11,37 @@ rules:
 - SRC-IP-CIDR,10.10.60.0/23,➡️ China
 - SRC-IP-CIDR,10.10.70.0/23,➡️ China
 - SRC-IP-CIDR,10.10.80.0/23,➡️ China
+- GEOIP,private,DIRECT,no-resolve
 
 sub-rules:
   vlan-tg-rules:
-    - DOMAIN,api.imem.app,📱[vlan] Telegram
-    - DOMAIN,api.swiftgram.app,📱[vlan] Telegram
-    - DOMAIN-SUFFIX,cdn-telegram.org,📱[vlan] Telegram
-    - DOMAIN-SUFFIX,comments.app,📱[vlan] Telegram
-    - DOMAIN-SUFFIX,t.me,📱[vlan] Telegram
-    - DOMAIN-SUFFIX,telegram.org,📱[vlan] Telegram
-    - DOMAIN-KEYWORD,nicegram,📱[vlan] Telegram
-    - IP-CIDR,109.239.140.0/24,📱[vlan] Telegram,no-resolve
-    - IP-CIDR,149.154.160.0/20,📱[vlan] Telegram,no-resolve
-    - IP-CIDR,91.108.0.0/16,📱[vlan] Telegram,no-resolve
-    - PROCESS-NAME,Telegram.exe,📱[vlan] Telegram
-    - PROCESS-NAME,telegram-desktop,📱[vlan] Telegram
+    - GEOIP,telegram,📱[跟单区] Telegram,no-resolve
 
   vlan-ai-rules:
-    - DOMAIN,copilot.microsoft.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,bing.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,chatgpt.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,auth0.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,client-api.arkoselabs.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,events.statsigapi.net,🤖[vlan] AI
-    - DOMAIN-SUFFIX,featuregates.org,🤖[vlan] AI
-    - DOMAIN-SUFFIX,identrust.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,intercom.io,🤖[vlan] AI
-    - DOMAIN-SUFFIX,intercomcdn.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,oaistatic.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,oaiusercontent.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,openai.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🤖[vlan] AI
-    - DOMAIN-SUFFIX,sentry.io,🤖[vlan] AI
-    - DOMAIN-SUFFIX,stripe.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,bard.google.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,gemini.google.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,makersuite.google.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,anthropic.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,claude.ai,🤖[vlan] AI
-    - DOMAIN-SUFFIX,googleapis.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,googleapis.cn,🤖[vlan] AI
-    - DOMAIN-SUFFIX,gstatic.com,🤖[vlan] AI
-    - DOMAIN-SUFFIX,meta.ai,🤖[vlan] AI
-    - DOMAIN-SUFFIX,perplexity.ai,🤖[vlan] AI
+    - DOMAIN,copilot.microsoft.com,🤖 AI
+    - DOMAIN-SUFFIX,bing.com,🤖 AI
+    - DOMAIN-SUFFIX,chatgpt.com,🤖 AI
+    - DOMAIN-SUFFIX,auth0.com,🤖 AI
+    - DOMAIN-SUFFIX,client-api.arkoselabs.com,🤖 AI
+    - DOMAIN-SUFFIX,events.statsigapi.net,🤖 AI
+    - DOMAIN-SUFFIX,featuregates.org,🤖 AI
+    - DOMAIN-SUFFIX,identrust.com,🤖 AI
+    - DOMAIN-SUFFIX,intercom.io,🤖 AI
+    - DOMAIN-SUFFIX,intercomcdn.com,🤖 AI
+    - DOMAIN-SUFFIX,oaistatic.com,🤖 AI
+    - DOMAIN-SUFFIX,oaiusercontent.com,🤖 AI
+    - DOMAIN-SUFFIX,openai.com,🤖 AI
+    - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🤖 AI
+    - DOMAIN-SUFFIX,sentry.io,🤖 AI
+    - DOMAIN-SUFFIX,stripe.com,🤖 AI
+    - DOMAIN-SUFFIX,bard.google.com,🤖 AI
+    - DOMAIN-SUFFIX,gemini.google.com,🤖 AI
+    - DOMAIN-SUFFIX,makersuite.google.com,🤖 AI
+    - DOMAIN-SUFFIX,anthropic.com,🤖 AI
+    - DOMAIN-SUFFIX,claude.ai,🤖 AI
+    - DOMAIN-SUFFIX,googleapis.com,🤖 AI
+    - DOMAIN-SUFFIX,googleapis.cn,🤖 AI
+    - DOMAIN-SUFFIX,gstatic.com,🤖 AI
+    - DOMAIN-SUFFIX,meta.ai,🤖 AI
+    - DOMAIN-SUFFIX,perplexity.ai,🤖 AI
 
