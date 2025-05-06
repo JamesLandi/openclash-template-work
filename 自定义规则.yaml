@@ -7,10 +7,10 @@ rules:
 - SRC-IP-CIDR,10.10.35.0/23,♾️35 绑定区_WIFI
 - SRC-IP-CIDR,10.10.40.0/23,♾️40 私聊区
 - SRC-IP-CIDR,10.10.45.0/23,♾️45 私聊区_WIFI
-- SRC-IP-CIDR,10.10.50.0/23,♾️50_60_70 China区
-- SRC-IP-CIDR,10.10.60.0/23,♾️50_60_70 China区
-- SRC-IP-CIDR,10.10.70.0/23,♾️50_60_70 China区
-- SRC-IP-CIDR,10.10.80.0/23,♾️80 China_监控区
+- SRC-IP-CIDR,10.10.50.0/23,➡️ China
+- SRC-IP-CIDR,10.10.60.0/23,➡️ China
+- SRC-IP-CIDR,10.10.70.0/23,➡️ China
+- SRC-IP-CIDR,10.10.80.0/23,➡️ China
 
 sub-rules:
   vlan-tg-rules:
