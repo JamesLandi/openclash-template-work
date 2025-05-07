@@ -1,4 +1,5 @@
 rules:
+- GEOIP,private,DIRECT,no-resolve
 - SUB-RULE,(OR,[(SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23)(SRC-IP-CIDR,10.10.45.0/23)]),vlan-tg-rules
 - SUB-RULE,(OR,[(SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23)(SRC-IP-CIDR,10.10.45.0/23)]),vlan-ai-rules
 - SRC-IP-CIDR,10.10.20.0/23,♾️20 跟单区
@@ -11,11 +12,12 @@ rules:
 - SRC-IP-CIDR,10.10.60.0/23,➡️ China
 - SRC-IP-CIDR,10.10.70.0/23,➡️ China
 - SRC-IP-CIDR,10.10.80.0/23,➡️ China
-- GEOIP,private,DIRECT,no-resolve
+
 
 sub-rules:
   vlan-tg-rules:
     - GEOIP,telegram,♾️[跟单区] 📱Telegram,no-resolve
+    - GEOSITE,category-communication,♾️[跟单区] 📱Telegram,no-resolve
 
   vlan-ai-rules:
     - DOMAIN,copilot.microsoft.com,🤖 AI
