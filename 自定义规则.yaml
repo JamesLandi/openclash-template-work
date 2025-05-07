@@ -15,7 +15,7 @@ rules:
 
 sub-rules:
   vlan-tg-rules:
-    - GEOIP,telegram,📱[跟单区] Telegram,no-resolve
+    - GEOIP,telegram,♾️[跟单区] 📱Telegram,no-resolve
 
   vlan-ai-rules:
     - DOMAIN,copilot.microsoft.com,🤖 AI
