@@ -5,12 +5,11 @@ rules:
 - SRC-IP-CIDR,10.10.70.0/23,➡️ China
 - SRC-IP-CIDR,10.10.80.0/23,➡️ China
 
-# vlan的tg规则
+
 - SUB-RULE,(AND,(OR,(SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23),(SRC-IP-CIDR,10.10.45.0/23)),(OR,(GEOIP,telegram),(GEOSITE,category-communication))),vlan-tg-rules
-# vlan的apple规则
+
 - SUB-RULE,(AND,(OR,(SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23),(SRC-IP-CIDR,10.10.45.0/23)),(GEOSITE,apple)),vlan-apple-rules
-# vlan的小红书规则
-# vlan的tiktok规则
+
 - SUB-RULE,(AND,(OR,(SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23),(SRC-IP-CIDR,10.10.45.0/23)),(GEOSITE,tiktok)),vlan-tiktok-rules
 
 - GEOSITE,category-ai-!cn,🤖 AI
