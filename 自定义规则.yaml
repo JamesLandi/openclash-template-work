@@ -33,16 +33,16 @@ sub-rules:
 
 
   vlan-apple-rules:
-    - SRC-IP-CIDR,10.10.20.0/23,♾️[跟单区] 📱Apple,no-resolve
-    - SRC-IP-CIDR,10.10.25.0/23,♾️🛜[跟单区_WIFI] 📱Apple,no-resolve
-    - SRC-IP-CIDR,10.10.30.0/23,♾️[绑定区] 📱Apple,no-resolve
-    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[绑定区_WIFI] 📱Apple,no-resolve
-    - SRC-IP-CIDR,10.10.40.0/23,♾️[私聊区] 📱Apple,no-resolve
-    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[私聊区_WIFI] 📱Apple,no-resolve
+    - SRC-IP-CIDR,10.10.20.0/23,♾️[跟单区] 🍎Apple,no-resolve
+    - SRC-IP-CIDR,10.10.25.0/23,♾️🛜[跟单区_WIFI] 🍎Apple,no-resolve
+    - SRC-IP-CIDR,10.10.30.0/23,♾️[绑定区] 🍎Apple,no-resolve
+    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[绑定区_WIFI] 🍎Apple,no-resolve
+    - SRC-IP-CIDR,10.10.40.0/23,♾️[私聊区] 🍎Apple,no-resolve
+    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[私聊区_WIFI] 🍎Apple,no-resolve
   vlan-tiktok-rules:
-    - SRC-IP-CIDR,10.10.20.0/23,♾️[跟单区] 📱Tiktok,no-resolve
-    - SRC-IP-CIDR,10.10.25.0/23,♾️🛜[跟单区_WIFI] 📱Tiktok,no-resolve
-    - SRC-IP-CIDR,10.10.30.0/23,♾️[绑定区] 📱Tiktok,no-resolve
-    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[绑定区_WIFI] 📱Tiktok,no-resolve
-    - SRC-IP-CIDR,10.10.40.0/23,♾️[私聊区] 📱Tiktok,no-resolve
-    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[私聊区_WIFI] 📱Tiktok,no-resolve
+    - SRC-IP-CIDR,10.10.20.0/23,♾️[跟单区] 🎶Tiktok,no-resolve
+    - SRC-IP-CIDR,10.10.25.0/23,♾️🛜[跟单区_WIFI] 🎶Tiktok,no-resolve
+    - SRC-IP-CIDR,10.10.30.0/23,♾️[绑定区] 🎶Tiktok,no-resolve
+    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[绑定区_WIFI] 🎶Tiktok,no-resolve
+    - SRC-IP-CIDR,10.10.40.0/23,♾️[私聊区] 🎶Tiktok,no-resolve
+    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[私聊区_WIFI] 🎶Tiktok,no-resolve
