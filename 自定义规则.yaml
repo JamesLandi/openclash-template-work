@@ -1,7 +1,7 @@
 rules:
 - GEOIP,private,DIRECT,no-resolve
-- SUB-RULE,(OR,[(SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23)(SRC-IP-CIDR,10.10.45.0/23)]),vlan-tg-rules
-- SUB-RULE,(OR,[(SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23)(SRC-IP-CIDR,10.10.45.0/23)]),vlan-ai-rules
+- SUB-RULE,(OR(AND,((OR,((SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23),(SRC-IP-CIDR,10.10.45.0/23))),GEOIP,telegram)),OR(AND,((OR,((SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23),(SRC-IP-CIDR,10.10.45.0/23))),GEOSITE,category-communication))),vlan-tg-rules
+- SUB-RULE,(OR,[(SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23),(SRC-IP-CIDR,10.10.45.0/23)]),vlan-ai-rules
 - SRC-IP-CIDR,10.10.20.0/23,♾️20 跟单区
 - SRC-IP-CIDR,10.10.25.0/23,♾️25 跟单区_WIFI
 - SRC-IP-CIDR,10.10.30.0/23,♾️30 绑定区
@@ -16,8 +16,12 @@ rules:
 
 sub-rules:
   vlan-tg-rules:
-    - GEOIP,telegram,♾️[跟单区] 📱Telegram,no-resolve
-    - GEOSITE,category-communication,♾️[跟单区] 📱Telegram,no-resolve
+    - SRC-IP-CIDR,10.10.20.0/23,♾️[跟单区] 📱Telegram,no-resolve
+    - SRC-IP-CIDR,10.10.25.0/23,♾️[跟单区_WIFI] 📱Telegram,no-resolve
+    - SRC-IP-CIDR,10.10.30.0/23,♾️[绑定区] 📱Telegram,no-resolve
+    - SRC-IP-CIDR,10.10.35.0/23,♾️[绑定区_WIFI] 📱Telegram,no-resolve
+    - SRC-IP-CIDR,10.10.40.0/23,♾️[私聊区] 📱Telegram,no-resolve
+    - SRC-IP-CIDR,10.10.45.0/23,♾️[私聊区_WIFI] 📱Telegram,no-resolve
 
   vlan-ai-rules:
     - DOMAIN,copilot.microsoft.com,🤖 AI
