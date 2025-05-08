@@ -5,10 +5,14 @@ rules:
 - SRC-IP-CIDR,10.10.70.0/23,➡️ China
 - SRC-IP-CIDR,10.10.80.0/23,➡️ China
 
-
+# Telegram
 - SUB-RULE,(AND,(OR,(SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23),(SRC-IP-CIDR,10.10.45.0/23)),(OR,(GEOIP,telegram),(GEOSITE,category-communication))),vlan-tg-rules
-
+# Apple
 - SUB-RULE,(AND,(OR,(SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23),(SRC-IP-CIDR,10.10.45.0/23)),(GEOSITE,apple)),vlan-apple-rules
+# TikTok
+- SUB-RULE,(AND,(OR,(SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23),(SRC-IP-CIDR,10.10.45.0/23)),(GEOSITE,tiktok)),vlan-tiktok-rules
+# 小红书
+- SUB-RULE,(AND,(OR,(SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23),(SRC-IP-CIDR,10.10.45.0/23)),(DOMAIN-SUFFIX,xiaohongshu.com)),vlan-xiaohongshu-rules
 
 - GEOSITE,category-ai-!cn,🤖 AI
 - SRC-IP-CIDR,10.10.20.0/23,♾️20 跟单区
@@ -36,3 +40,20 @@ sub-rules:
     - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[绑定区_WIFI] 🍎Apple,no-resolve
     - SRC-IP-CIDR,10.10.40.0/23,♾️[私聊区] 🍎Apple,no-resolve
     - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[私聊区_WIFI] 🍎Apple,no-resolve
+
+  vlan-tiktok-rules:
+    - SRC-IP-CIDR,10.10.20.0/23,♾️[跟单区] 🎶TikTok,no-resolve
+    - SRC-IP-CIDR,10.10.25.0/23,♾️🛜[跟单区_WIFI] 🎶TikTok,no-resolve
+    - SRC-IP-CIDR,10.10.30.0/23,♾️[绑定区] 🎶TikTok,no-resolve
+    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[绑定区_WIFI] 🎶TikTok,no-resolve
+    - SRC-IP-CIDR,10.10.40.0/23,♾️[私聊区] 🎶TikTok,no-resolve
+    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[私聊区_WIFI] 🎶TikTok,no-resolve
+
+
+  vlan-xiaohongshu-rules:
+    - SRC-IP-CIDR,10.10.20.0/23,♾️[跟单区] 📕小红书,no-resolve
+    - SRC-IP-CIDR,10.10.25.0/23,♾️🛜[跟单区_WIFI] 📕小红书,no-resolve
+    - SRC-IP-CIDR,10.10.30.0/23,♾️[绑定区] 📕小红书,no-resolve
+    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[绑定区_WIFI] 📕小红书,no-resolve
+    - SRC-IP-CIDR,10.10.40.0/23,♾️[私聊区] 📕小红书,no-resolve
+    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[私聊区_WIFI] 📕小红书,no-resolve
