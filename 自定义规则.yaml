@@ -1,53 +1,48 @@
 rules:
 - GEOIP,private,DIRECT,no-resolve
-- SUB-RULE,(OR(AND,((OR,((SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23),(SRC-IP-CIDR,10.10.45.0/23))),GEOIP,telegram)),OR(AND,((OR,((SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23),(SRC-IP-CIDR,10.10.45.0/23))),GEOSITE,category-communication))),vlan-tg-rules
-- SUB-RULE,(OR,[(SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23),(SRC-IP-CIDR,10.10.45.0/23)]),vlan-ai-rules
+- SRC-IP-CIDR,10.10.50.0/23,➡️ China
+- SRC-IP-CIDR,10.10.60.0/23,➡️ China
+- SRC-IP-CIDR,10.10.70.0/23,➡️ China
+- SRC-IP-CIDR,10.10.80.0/23,➡️ China
+
+# vlan的tg规则
+- SUB-RULE,(AND,(OR,(SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23),(SRC-IP-CIDR,10.10.45.0/23)),(OR,(GEOIP,telegram),(GEOSITE,category-communication))),vlan-tg-rules
+# vlan的apple规则
+- SUB-RULE,(AND,(OR,(SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23),(SRC-IP-CIDR,10.10.45.0/23)),(GEOSITE,apple)),vlan-apple-rules
+# vlan的小红书规则
+# vlan的tiktok规则
+- SUB-RULE,(AND,(OR,(SRC-IP-CIDR,10.10.20.0/23),(SRC-IP-CIDR,10.10.25.0/23),(SRC-IP-CIDR,10.10.30.0/23),(SRC-IP-CIDR,10.10.35.0/23),(SRC-IP-CIDR,10.10.40.0/23),(SRC-IP-CIDR,10.10.45.0/23)),(GEOSITE,tiktok)),vlan-tiktok-rules
+
+- GEOSITE,category-ai-!cn,🤖 AI
 - SRC-IP-CIDR,10.10.20.0/23,♾️20 跟单区
 - SRC-IP-CIDR,10.10.25.0/23,♾️25 跟单区_WIFI
 - SRC-IP-CIDR,10.10.30.0/23,♾️30 绑定区
 - SRC-IP-CIDR,10.10.35.0/23,♾️35 绑定区_WIFI
 - SRC-IP-CIDR,10.10.40.0/23,♾️40 私聊区
 - SRC-IP-CIDR,10.10.45.0/23,♾️45 私聊区_WIFI
-- SRC-IP-CIDR,10.10.50.0/23,➡️ China
-- SRC-IP-CIDR,10.10.60.0/23,➡️ China
-- SRC-IP-CIDR,10.10.70.0/23,➡️ China
-- SRC-IP-CIDR,10.10.80.0/23,➡️ China
 
 
 sub-rules:
   vlan-tg-rules:
     - SRC-IP-CIDR,10.10.20.0/23,♾️[跟单区] 📱Telegram,no-resolve
-    - SRC-IP-CIDR,10.10.25.0/23,🛜[跟单区_WIFI] 📱Telegram,no-resolve
+    - SRC-IP-CIDR,10.10.25.0/23,♾️🛜[跟单区_WIFI] 📱Telegram,no-resolve
     - SRC-IP-CIDR,10.10.30.0/23,♾️[绑定区] 📱Telegram,no-resolve
-    - SRC-IP-CIDR,10.10.35.0/23,🛜[绑定区_WIFI] 📱Telegram,no-resolve
+    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[绑定区_WIFI] 📱Telegram,no-resolve
     - SRC-IP-CIDR,10.10.40.0/23,♾️[私聊区] 📱Telegram,no-resolve
-    - SRC-IP-CIDR,10.10.45.0/23,🛜[私聊区_WIFI] 📱Telegram,no-resolve
+    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[私聊区_WIFI] 📱Telegram,no-resolve
 
-  vlan-ai-rules:
-    - DOMAIN,copilot.microsoft.com,🤖 AI
-    - DOMAIN-SUFFIX,bing.com,🤖 AI
-    - DOMAIN-SUFFIX,chatgpt.com,🤖 AI
-    - DOMAIN-SUFFIX,auth0.com,🤖 AI
-    - DOMAIN-SUFFIX,client-api.arkoselabs.com,🤖 AI
-    - DOMAIN-SUFFIX,events.statsigapi.net,🤖 AI
-    - DOMAIN-SUFFIX,featuregates.org,🤖 AI
-    - DOMAIN-SUFFIX,identrust.com,🤖 AI
-    - DOMAIN-SUFFIX,intercom.io,🤖 AI
-    - DOMAIN-SUFFIX,intercomcdn.com,🤖 AI
-    - DOMAIN-SUFFIX,oaistatic.com,🤖 AI
-    - DOMAIN-SUFFIX,oaiusercontent.com,🤖 AI
-    - DOMAIN-SUFFIX,openai.com,🤖 AI
-    - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🤖 AI
-    - DOMAIN-SUFFIX,sentry.io,🤖 AI
-    - DOMAIN-SUFFIX,stripe.com,🤖 AI
-    - DOMAIN-SUFFIX,bard.google.com,🤖 AI
-    - DOMAIN-SUFFIX,gemini.google.com,🤖 AI
-    - DOMAIN-SUFFIX,makersuite.google.com,🤖 AI
-    - DOMAIN-SUFFIX,anthropic.com,🤖 AI
-    - DOMAIN-SUFFIX,claude.ai,🤖 AI
-    - DOMAIN-SUFFIX,googleapis.com,🤖 AI
-    - DOMAIN-SUFFIX,googleapis.cn,🤖 AI
-    - DOMAIN-SUFFIX,gstatic.com,🤖 AI
-    - DOMAIN-SUFFIX,meta.ai,🤖 AI
-    - DOMAIN-SUFFIX,perplexity.ai,🤖 AI
 
+  vlan-apple-rules:
+    - SRC-IP-CIDR,10.10.20.0/23,♾️[跟单区] 📱Apple,no-resolve
+    - SRC-IP-CIDR,10.10.25.0/23,♾️🛜[跟单区_WIFI] 📱Apple,no-resolve
+    - SRC-IP-CIDR,10.10.30.0/23,♾️[绑定区] 📱Apple,no-resolve
+    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[绑定区_WIFI] 📱Apple,no-resolve
+    - SRC-IP-CIDR,10.10.40.0/23,♾️[私聊区] 📱Apple,no-resolve
+    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[私聊区_WIFI] 📱Apple,no-resolve
+  vlan-tiktok-rules:
+    - SRC-IP-CIDR,10.10.20.0/23,♾️[跟单区] 📱Tiktok,no-resolve
+    - SRC-IP-CIDR,10.10.25.0/23,♾️🛜[跟单区_WIFI] 📱Tiktok,no-resolve
+    - SRC-IP-CIDR,10.10.30.0/23,♾️[绑定区] 📱Tiktok,no-resolve
+    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[绑定区_WIFI] 📱Tiktok,no-resolve
+    - SRC-IP-CIDR,10.10.40.0/23,♾️[私聊区] 📱Tiktok,no-resolve
+    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[私聊区_WIFI] 📱Tiktok,no-resolve
