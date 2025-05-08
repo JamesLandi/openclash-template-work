@@ -17,11 +17,11 @@ rules:
 sub-rules:
   vlan-tg-rules:
     - SRC-IP-CIDR,10.10.20.0/23,♾️[跟单区] 📱Telegram,no-resolve
-    - SRC-IP-CIDR,10.10.25.0/23,♾️[跟单区_WIFI] 📱Telegram,no-resolve
+    - SRC-IP-CIDR,10.10.25.0/23,🛜[跟单区_WIFI] 📱Telegram,no-resolve
     - SRC-IP-CIDR,10.10.30.0/23,♾️[绑定区] 📱Telegram,no-resolve
-    - SRC-IP-CIDR,10.10.35.0/23,♾️[绑定区_WIFI] 📱Telegram,no-resolve
+    - SRC-IP-CIDR,10.10.35.0/23,🛜[绑定区_WIFI] 📱Telegram,no-resolve
     - SRC-IP-CIDR,10.10.40.0/23,♾️[私聊区] 📱Telegram,no-resolve
-    - SRC-IP-CIDR,10.10.45.0/23,♾️[私聊区_WIFI] 📱Telegram,no-resolve
+    - SRC-IP-CIDR,10.10.45.0/23,🛜[私聊区_WIFI] 📱Telegram,no-resolve
 
   vlan-ai-rules:
     - DOMAIN,copilot.microsoft.com,🤖 AI
