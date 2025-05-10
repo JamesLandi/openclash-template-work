@@ -17,43 +17,46 @@ rules:
 - GEOSITE,category-ai-!cn,🤖 AI
 - SRC-IP-CIDR,10.10.20.0/23,♾️20 跟单区
 - SRC-IP-CIDR,10.10.25.0/23,♾️25 跟单区_WIFI
-- SRC-IP-CIDR,10.10.30.0/23,♾️30 绑定区
-- SRC-IP-CIDR,10.10.35.0/23,♾️35 绑定区_WIFI
-- SRC-IP-CIDR,10.10.40.0/23,♾️40 私聊区
-- SRC-IP-CIDR,10.10.45.0/23,♾️45 私聊区_WIFI
+- SRC-IP-CIDR,10.10.30.0/23,♾️30 私聊区
+- SRC-IP-CIDR,10.10.35.0/23,♾️35 私聊区_WIFI
+- SRC-IP-CIDR,10.10.40.0/23,♾️40 绑定区
+- SRC-IP-CIDR,10.10.45.0/23,♾️45 绑定区_WIFI
 
 
 sub-rules:
   vlan-tg-rules:
     - SRC-IP-CIDR,10.10.20.0/23,♾️[跟单区] 📱Telegram,no-resolve
     - SRC-IP-CIDR,10.10.25.0/23,♾️🛜[跟单区_WIFI] 📱Telegram,no-resolve
-    - SRC-IP-CIDR,10.10.30.0/23,♾️[绑定区] 📱Telegram,no-resolve
-    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[绑定区_WIFI] 📱Telegram,no-resolve
-    - SRC-IP-CIDR,10.10.40.0/23,♾️[私聊区] 📱Telegram,no-resolve
-    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[私聊区_WIFI] 📱Telegram,no-resolve
+    - SRC-IP-CIDR,10.10.30.0/23,♾️[私聊区] 📱Telegram,no-resolve
+    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[私聊区_WIFI] 📱Telegram,no-resolve
+    - SRC-IP-CIDR,10.10.40.0/23,♾️[绑定区] 📱Telegram,no-resolve
+    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[绑定区_WIFI] 📱Telegram,no-resolve
+
 
 
   vlan-apple-rules:
     - SRC-IP-CIDR,10.10.20.0/23,♾️[跟单区] 🍎Apple,no-resolve
     - SRC-IP-CIDR,10.10.25.0/23,♾️🛜[跟单区_WIFI] 🍎Apple,no-resolve
-    - SRC-IP-CIDR,10.10.30.0/23,♾️[绑定区] 🍎Apple,no-resolve
-    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[绑定区_WIFI] 🍎Apple,no-resolve
-    - SRC-IP-CIDR,10.10.40.0/23,♾️[私聊区] 🍎Apple,no-resolve
-    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[私聊区_WIFI] 🍎Apple,no-resolve
+    - SRC-IP-CIDR,10.10.30.0/23,♾️[私聊区] 🍎Apple,no-resolve
+    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[私聊区_WIFI] 🍎Apple,no-resolve
+    - SRC-IP-CIDR,10.10.40.0/23,♾️[绑定区] 🍎Apple,no-resolve
+    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[绑定区_WIFI] 🍎Apple,no-resolve
+
 
   vlan-tiktok-rules:
     - SRC-IP-CIDR,10.10.20.0/23,♾️[跟单区] 🎶TikTok,no-resolve
     - SRC-IP-CIDR,10.10.25.0/23,♾️🛜[跟单区_WIFI] 🎶TikTok,no-resolve
-    - SRC-IP-CIDR,10.10.30.0/23,♾️[绑定区] 🎶TikTok,no-resolve
-    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[绑定区_WIFI] 🎶TikTok,no-resolve
-    - SRC-IP-CIDR,10.10.40.0/23,♾️[私聊区] 🎶TikTok,no-resolve
-    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[私聊区_WIFI] 🎶TikTok,no-resolve
+    - SRC-IP-CIDR,10.10.30.0/23,♾️[私聊区] 🎶TikTok,no-resolve
+    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[私聊区_WIFI] 🎶TikTok,no-resolve
+    - SRC-IP-CIDR,10.10.40.0/23,♾️[绑定区] 🎶TikTok,no-resolve
+    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[绑定区_WIFI] 🎶TikTok,no-resolve
+
 
 
   vlan-xiaohongshu-rules:
     - SRC-IP-CIDR,10.10.20.0/23,♾️[跟单区] 📕小红书,no-resolve
     - SRC-IP-CIDR,10.10.25.0/23,♾️🛜[跟单区_WIFI] 📕小红书,no-resolve
-    - SRC-IP-CIDR,10.10.30.0/23,♾️[绑定区] 📕小红书,no-resolve
-    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[绑定区_WIFI] 📕小红书,no-resolve
-    - SRC-IP-CIDR,10.10.40.0/23,♾️[私聊区] 📕小红书,no-resolve
-    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[私聊区_WIFI] 📕小红书,no-resolve
+    - SRC-IP-CIDR,10.10.30.0/23,♾️[私聊区] 📕小红书,no-resolve
+    - SRC-IP-CIDR,10.10.35.0/23,♾️🛜[私聊区_WIFI] 📕小红书,no-resolve
+    - SRC-IP-CIDR,10.10.40.0/23,♾️[绑定区] 📕小红书,no-resolve
+    - SRC-IP-CIDR,10.10.45.0/23,♾️🛜[绑定区_WIFI] 📕小红书,no-resolve
